@@ -1,0 +1,75 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+	background-image: url('bg.jpg');
+}
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.wrapper{
+	position: relative;
+}
+.input-class{
+	padding: 6px 12px;
+	border: 2px solid #fff;
+	outline: 0;
+	width: 287px;
+	height: 34px;
+	background: transparent;
+	position: relative;
+	z-index: 9;
+}
+.wrapper label{
+	position: absolute;
+	color: #fff;
+	top: 50%;
+	left: -11px;
+	transform: translate(50%, -50%);
+	transition: 0.5s;
+}
+.border:before, .border:after {
+	position: absolute;
+	content: "";
+	background-color: transparent;
+	border-style: solid;
+	border-width: 0px;
+	border-color: #000;
+	height: 0%;
+	width: 0%;
+	z-index: 9;
+	transition: 0.5s;
+}
+.border:before{
+	right: 0;
+	bottom: 0;
+}
+.border:after{
+	left: 0;
+	top: 0;
+}
+.input-class:focus ~ .border:before{
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	width: 99%;
+	height: 94%;
+	transition: 0.5s;
+}
+.input-class:focus ~ .border:after{
+	border-left-width: 2px;
+	border-top-width: 2px;
+	width: 99%;
+	height: 94%;
+	transition: 0.5s;
+}
+.input-class:focus ~ label{
+	top: -20px;
+	left: -19px;
+	transition: 0.5s;
+	color: #000;
+}
